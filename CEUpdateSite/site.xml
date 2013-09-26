@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/ObproPlugin_3.7.2.jar" id="ObproPlugin" version="3.7.2">
+      <category name="MatsuzawaLab"/>
+   </feature>
+   <feature url="features/PresPlugin_3.7.4.jar" id="PresPlugin" version="3.7.4">
+      <category name="MatsuzawaLab"/>
+   </feature>
+   <category-def name="MatsuzawaLab" label="MatsuzawaLab"/>
+</site>
