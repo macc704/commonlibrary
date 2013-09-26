@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project CUpdater">
+	<tstamp>
+		<format property="now.time" pattern="yyyyMMddHHmm"/>
+	</tstamp>	
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+    	<jar destfile="package/updater.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="matsuzawa.app.updater.UpdaterMain"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+    		<fileset dir="bin"/>
+    		<fileset dir="../CommonLibrary/bin"/>
+        	<zipfileset excludes="META-INF/*.SF" src="../CommonLibrary/lib/CEncodingDetector.jar"/>
+        	<zipfileset excludes="META-INF/*.SF" src="../CommonLibrary/lib/commons-csv-20070730.jar"/>       		
+    		<fileset dir="../CSwing/bin"/>
+        </jar>
+
+	    <zip destfile="packages/Updater-${now.time}.zip" encoding="MS932">
+	       	<fileset excludes="MyProjects" dir="package"/>
+	    </zip>
+    </target>
+</project>
