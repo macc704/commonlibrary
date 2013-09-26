@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab"
+   revision="5226"
+   last-author="Takashi"
+   url="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab/trunk/projects/commonlib/CommonLibrary/src/clib/common/filesystem"
+   uuid="8e3d9786-9690-4157-98c2-ede1ae404ee5"
+   committed-rev="5226"
+   kind="dir"
+   committed-date="2013-09-26T05:11:40.924519Z"/>
+<entry
+   name="CDirectory.java"
+   checksum="4ef4efa618088c507973d0b247d2942e"
+   last-author="matsuzawa"
+   committed-rev="4370"
+   text-time="2013-07-16T08:30:58.377218Z"
+   kind="file"
+   committed-date="2012-09-24T08:17:08.626292Z"
+   prop-time="2013-07-16T08:30:58.295213Z"/>
+<entry
+   name="CFile.java"
+   checksum="927830d6de8f88ecfbb2eb4200f82c6b"
+   last-author="Takashi"
+   committed-rev="5226"
+   text-time="2013-09-26T05:09:57.000000Z"
+   kind="file"
+   committed-date="2013-09-26T05:11:40.924000Z"
+   prop-time="2013-07-16T08:30:58.274212Z"/>
+<entry
+   name="CFileElement.java"
+   checksum="88b6d8fafdc72f0897bd1e6339bb90c1"
+   last-author="matsuzawa"
+   committed-rev="4370"
+   text-time="2013-07-16T08:30:58.422221Z"
+   kind="file"
+   committed-date="2012-09-24T08:17:08.626292Z"
+   prop-time="2013-07-16T08:30:58.321215Z"/>
+<entry
+   name="CFileFilter.java"
+   checksum="b0091d3d7dc5b5f9189be7bdb0ee1990"
+   last-author="macchan"
+   committed-rev="1605"
+   text-time="2013-07-16T08:30:58.398219Z"
+   kind="file"
+   committed-date="2010-06-27T04:26:53.853101Z"
+   prop-time="2013-07-16T08:30:58.307214Z"/>
+<entry
+   name="CFileSystem.java"
+   checksum="8bd2ced4c723daecdf78988d9078abed"
+   last-author="macchan"
+   committed-rev="3137"
+   text-time="2013-07-16T08:30:58.388219Z"
+   kind="file"
+   committed-date="2012-06-20T05:07:13.457668Z"
+   prop-time="2013-07-16T08:30:58.301214Z"/>
+<entry
+   name="CFilename.java"
+   checksum="e37ec3388b7bc3116960939a35877bfe"
+   last-author="macchan"
+   committed-rev="1605"
+   text-time="2013-07-16T08:30:58.365217Z"
+   kind="file"
+   committed-date="2010-06-27T04:26:53.853101Z"
+   prop-time="2013-07-16T08:30:58.288213Z"/>
+<entry
+   name="CPath.java"
+   checksum="196e77dec573d9fd5fd34cdb951aeb9f"
+   last-author="macchan"
+   committed-rev="2475"
+   text-time="2013-07-16T08:30:58.332215Z"
+   kind="file"
+   committed-date="2011-11-12T14:24:21.436127Z"
+   prop-time="2013-07-16T08:30:58.266212Z"/>
+<entry
+   name="CRecursiveExplorer.java"
+   checksum="e2c868d9f17afcb6173b821ee415ccaf"
+   last-author="macchan"
+   committed-rev="1605"
+   text-time="2013-07-16T08:30:58.410220Z"
+   kind="file"
+   committed-date="2010-06-27T04:26:53.853101Z"
+   prop-time="2013-07-16T08:30:58.314214Z"/>
+<entry
+   name="ICRecursiveExplorerHandler.java"
+   checksum="e580d82dcdfc5526c91b7c41e9a7a811"
+   last-author="macchan"
+   committed-rev="1605"
+   text-time="2013-07-16T08:30:58.354217Z"
+   kind="file"
+   committed-date="2010-06-27T04:26:53.853101Z"
+   prop-time="2013-07-16T08:30:58.281213Z"/>
+</wc-entries>

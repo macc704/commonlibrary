@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab"
+   name=""
+   revision="5226"
+   last-author="kousuke"
+   uuid="8e3d9786-9690-4157-98c2-ede1ae404ee5"
+   url="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab/trunk/projects/commonlib/CommonLibrary/src/clib/common/compiler"
+   committed-rev="4973"
+   kind="dir"
+   committed-date="2013-02-01T09:01:35.492966Z"/>
+<entry
+   name="CClasspathManager.java"
+   checksum="e7da1e87b3f7f72e71289f714e7ac075"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:59.528284Z"
+   committed-rev="2344"
+   kind="file"
+   committed-date="2011-06-23T13:50:57.536965Z"
+   prop-time="2013-07-16T08:30:59.445279Z"/>
+<entry
+   name="CCompileResult.java"
+   checksum="70bf62ec4f8cf26dc073736e60371479"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:59.635290Z"
+   committed-rev="2492"
+   kind="file"
+   committed-date="2011-11-14T07:19:33.140212Z"
+   prop-time="2013-07-16T08:30:59.499282Z"/>
+<entry
+   name="CDiagnostic.java"
+   checksum="d01f90573e201cd4b5c5eae509515bd5"
+   last-author="kousuke"
+   text-time="2013-07-16T08:30:59.610289Z"
+   committed-rev="4558"
+   kind="file"
+   committed-date="2012-10-12T07:31:14.772325Z"
+   prop-time="2013-07-16T08:30:59.485281Z"/>
+<entry
+   name="CEmbededJavaCompiler.java"
+   checksum="a7ae09f1746bfd1fc794d49bc54f9934"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:59.587287Z"
+   committed-rev="3020"
+   kind="file"
+   committed-date="2012-04-05T07:33:55.999717Z"
+   prop-time="2013-07-16T08:30:59.472281Z"/>
+<entry
+   name="CJavaCompiler.java"
+   checksum="c69e11cf5a5cebeecb1bf95bf9c41bd6"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:59.517283Z"
+   committed-rev="3147"
+   kind="file"
+   committed-date="2012-06-21T02:27:39.865838Z"
+   prop-time="2013-07-16T08:30:59.439279Z"/>
+<entry
+   name="CJavaCompilerFactory.java"
+   checksum="71b6282d827669e2a3db59656db129a6"
+   last-author="matsuzawa"
+   text-time="2013-07-16T08:30:59.624289Z"
+   committed-rev="4795"
+   kind="file"
+   committed-date="2012-12-04T07:03:06.823826Z"
+   prop-time="2013-07-16T08:30:59.491282Z"/>
+<entry
+   name="CJavacJavaCompiler.java"
+   checksum="360692725949d241bd61274a0c44fc6b"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:59.565286Z"
+   committed-rev="3020"
+   kind="file"
+   committed-date="2012-04-05T07:33:55.999717Z"
+   prop-time="2013-07-16T08:30:59.460280Z"/>
+<entry
+   name="CMessageParser.java"
+   checksum="64bcafcca9eefbfcdc9f9d390dee3e95"
+   last-author="kousuke"
+   text-time="2013-07-16T08:30:59.576287Z"
+   committed-rev="4804"
+   kind="file"
+   committed-date="2012-12-05T13:19:29.245451Z"
+   prop-time="2013-07-16T08:30:59.466280Z"/>
+<entry
+   name="CMessageParser160_31.java"
+   checksum="d13628742481029a7eb23b0301d59e2b"
+   last-author="kousuke"
+   text-time="2013-07-16T08:30:59.648291Z"
+   committed-rev="4306"
+   kind="file"
+   committed-date="2012-09-16T16:15:29.481955Z"
+   prop-time="2013-07-16T08:30:59.507283Z"/>
+<entry
+   name="CMessageParser170_07.java"
+   checksum="9a465f5780f1362a03e5036d7c7e33de"
+   last-author="kousuke"
+   text-time="2013-07-16T08:30:59.555285Z"
+   committed-rev="4973"
+   kind="file"
+   committed-date="2013-02-01T09:01:35.492966Z"
+   prop-time="2013-07-16T08:30:59.453280Z"/>
+<entry
+   name="ICCompiler.java"
+   checksum="f3768e257b9c398ce42a328acc57fa06"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:59.599288Z"
+   committed-rev="2320"
+   kind="file"
+   committed-date="2011-06-09T03:11:13.659169Z"
+   prop-time="2013-07-16T08:30:59.478281Z"/>
+</wc-entries>

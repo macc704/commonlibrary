@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab"
+   name=""
+   revision="5226"
+   last-author="matsuzawa"
+   uuid="8e3d9786-9690-4157-98c2-ede1ae404ee5"
+   url="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab/trunk/projects/commonlib/CommonLibrary/lib"
+   committed-rev="5017"
+   kind="dir"
+   committed-date="2013-07-13T14:09:52.967458Z"/>
+<entry
+   name="CEncodingDetector.jar"
+   checksum="da0a0d829879dcd8fbf0d84af45763a2"
+   last-author="matsuzawa"
+   text-time="2013-07-16T08:30:56.839130Z"
+   committed-rev="5017"
+   kind="file"
+   committed-date="2013-07-13T14:09:52.967458Z"
+   prop-time="2013-07-16T08:30:56.792127Z"/>
+<entry
+   name="commons-csv-20070730.jar"
+   checksum="d2650e5524ef103902f740e51af85626"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:56.825129Z"
+   committed-rev="2475"
+   kind="file"
+   committed-date="2011-11-12T14:24:21.436127Z"
+   prop-time="2013-07-16T08:30:56.641119Z"/>
+</wc-entries>

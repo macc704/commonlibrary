@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab"
+   name=""
+   revision="5226"
+   last-author="macchan"
+   uuid="8e3d9786-9690-4157-98c2-ede1ae404ee5"
+   url="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab/trunk/projects/commonlib/CommonLibrary/src/clib/common/model"
+   committed-rev="3133"
+   kind="dir"
+   committed-date="2012-06-19T16:39:11.601494Z"/>
+<entry
+   name="CAbstractModelObject.java"
+   checksum="dbbc520dddc2e54a25a1678d03e4de0e"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:57.284156Z"
+   committed-rev="3133"
+   kind="file"
+   committed-date="2012-06-19T16:39:11.601494Z"
+   prop-time="2013-07-16T08:30:57.235153Z"/>
+<entry
+   name="CObject.java"
+   checksum="a1427e29663c9c6d8629219d24256007"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:57.271155Z"
+   committed-rev="2063"
+   kind="file"
+   committed-date="2011-04-09T08:13:06.342975Z"
+   prop-time="2013-07-16T08:30:57.228152Z"/>
+<entry
+   name="ICModelChangeListener.java"
+   checksum="4be6a079e17a165cef812f1dfb5299e1"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:57.259154Z"
+   committed-rev="3130"
+   kind="file"
+   committed-date="2012-06-19T04:16:14.159934Z"
+   prop-time="2013-07-16T08:30:57.222152Z"/>
+<entry
+   name="ICModelObject.java"
+   checksum="b49c8c98d83a6ef5ba21a5e6bbeec92d"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:57.247153Z"
+   committed-rev="3133"
+   kind="file"
+   committed-date="2012-06-19T16:39:11.601494Z"
+   prop-time="2013-07-16T08:30:57.216152Z"/>
+</wc-entries>

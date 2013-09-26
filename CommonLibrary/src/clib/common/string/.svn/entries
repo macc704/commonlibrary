@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab"
+   name=""
+   revision="5226"
+   last-author="macchan"
+   uuid="8e3d9786-9690-4157-98c2-ede1ae404ee5"
+   url="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab/trunk/projects/commonlib/CommonLibrary/src/clib/common/string"
+   committed-rev="1757"
+   kind="dir"
+   committed-date="2010-07-21T08:29:56.639528Z"/>
+<entry
+   name="CStringChopper.java"
+   checksum="0ea749dc78cc8e63efcf7572e856359d"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:58.678235Z"
+   committed-rev="1605"
+   kind="file"
+   committed-date="2010-06-27T04:26:53.853101Z"
+   prop-time="2013-07-16T08:30:58.636233Z"/>
+<entry
+   name="CStringCleaner.java"
+   checksum="c0a37aa315bef0641b8e24b58557575d"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:58.666235Z"
+   committed-rev="1757"
+   kind="file"
+   committed-date="2010-07-21T08:29:56.639528Z"
+   prop-time="2013-07-16T08:30:58.630233Z"/>
+<entry
+   name="CStringEscaper.java"
+   checksum="fc4fe51a0801aa97160b5bcb75883991"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:58.692236Z"
+   committed-rev="1731"
+   kind="file"
+   committed-date="2010-07-16T02:37:07.564940Z"
+   prop-time="2013-07-16T08:30:58.647233Z"/>
+<entry
+   name="CStringMatcher.java"
+   checksum="6f5ef115f9dac01a13adf4797a4cdcc0"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:58.728238Z"
+   committed-rev="1605"
+   kind="file"
+   committed-date="2010-06-27T04:26:53.853101Z"
+   prop-time="2013-07-16T08:30:58.655234Z"/>
+</wc-entries>

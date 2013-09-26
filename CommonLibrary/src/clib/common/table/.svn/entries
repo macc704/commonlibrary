@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab"
+   name=""
+   revision="5226"
+   last-author="matsuzawa"
+   uuid="8e3d9786-9690-4157-98c2-ede1ae404ee5"
+   url="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab/trunk/projects/commonlib/CommonLibrary/src/clib/common/table"
+   committed-rev="4985"
+   kind="dir"
+   committed-date="2013-02-10T14:59:08.251418Z"/>
+<entry
+   name="CCSVFileIO.java"
+   checksum="50b57a2d9de3cb063ef9bba9e4dfdffe"
+   last-author="matsuzawa"
+   text-time="2013-07-16T08:30:58.955251Z"
+   committed-rev="4985"
+   kind="file"
+   committed-date="2013-02-10T14:59:08.251418Z"
+   prop-time="2013-07-16T08:30:58.942250Z"/>
+</wc-entries>

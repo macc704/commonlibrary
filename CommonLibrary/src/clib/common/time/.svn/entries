@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab"
+   name=""
+   revision="5226"
+   last-author="macchan"
+   uuid="8e3d9786-9690-4157-98c2-ede1ae404ee5"
+   url="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab/trunk/projects/commonlib/CommonLibrary/src/clib/common/time"
+   committed-rev="3159"
+   kind="dir"
+   committed-date="2012-07-11T10:06:15.698138Z"/>
+<entry
+   name="CTime.java"
+   checksum="71527e939e6782c50186406690cda80b"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:59.846302Z"
+   committed-rev="3118"
+   kind="file"
+   committed-date="2012-06-07T11:35:16.895537Z"
+   prop-time="2013-07-16T08:30:59.799299Z"/>
+<entry
+   name="CTimeInterval.java"
+   checksum="b279bfdcbbece6717c9645e09034e05f"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:59.883304Z"
+   committed-rev="3071"
+   kind="file"
+   committed-date="2012-05-09T09:33:03.903070Z"
+   prop-time="2013-07-16T08:30:59.820301Z"/>
+<entry
+   name="CTimeOrderedList.java"
+   checksum="f537f9dbcbcc4b3ff59a725c3a8420c5"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:59.859303Z"
+   committed-rev="3159"
+   kind="file"
+   committed-date="2012-07-11T10:06:15.698138Z"
+   prop-time="2013-07-16T08:30:59.806300Z"/>
+<entry
+   name="CTimeRange.java"
+   checksum="b675e660b2bb125ee5227f668dc07efd"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:59.904305Z"
+   committed-rev="3071"
+   kind="file"
+   committed-date="2012-05-09T09:33:03.903070Z"
+   prop-time="2013-07-16T08:30:59.833301Z"/>
+<entry
+   name="CTimeUtils.java"
+   checksum="121aa3dcf7dbea173e8167c3e246d308"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:59.871303Z"
+   committed-rev="2026"
+   kind="file"
+   committed-date="2011-04-07T02:44:51.061726Z"
+   prop-time="2013-07-16T08:30:59.813300Z"/>
+<entry
+   name="ICTimeOrderable.java"
+   checksum="ce6e5fce7f64e7543f297539eb9bf04d"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:59.893305Z"
+   committed-rev="3118"
+   kind="file"
+   committed-date="2012-06-07T11:35:16.895537Z"
+   prop-time="2013-07-16T08:30:59.826301Z"/>
+</wc-entries>

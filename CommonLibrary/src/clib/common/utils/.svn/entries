@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab"
+   name=""
+   revision="5226"
+   last-author="macchan"
+   uuid="8e3d9786-9690-4157-98c2-ede1ae404ee5"
+   url="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab/trunk/projects/commonlib/CommonLibrary/src/clib/common/utils"
+   committed-rev="3083"
+   kind="dir"
+   committed-date="2012-05-15T15:06:35.130138Z"/>
+<entry
+   name="CCSVFileReader.java"
+   checksum="6758841416eeebbde6fbf55619118e76"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:57.417163Z"
+   committed-rev="2475"
+   kind="file"
+   committed-date="2011-11-12T14:24:21.436127Z"
+   prop-time="2013-07-16T08:30:57.335158Z"/>
+<entry
+   name="CCSVReader.java"
+   checksum="b670389f0fbb5ce4c597f1515ec60f03"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:57.429164Z"
+   committed-rev="2475"
+   kind="file"
+   committed-date="2011-11-12T14:24:21.436127Z"
+   prop-time="2013-07-16T08:30:57.343159Z"/>
+<entry
+   name="CCSVWriter.java"
+   checksum="cbca1a10f0fc1ef0daa88652043cceb7"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:57.501168Z"
+   committed-rev="2475"
+   kind="file"
+   committed-date="2011-11-12T14:24:21.436127Z"
+   prop-time="2013-07-16T08:30:57.373161Z"/>
+<entry
+   name="CCopyUtil.java"
+   checksum="26ab8389fccc1fe0d48da2b8f854cfc4"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:57.513169Z"
+   committed-rev="1778"
+   kind="file"
+   committed-date="2010-07-31T07:54:52.714736Z"
+   prop-time="2013-07-16T08:30:57.379161Z"/>
+<entry
+   name="CDate.java"
+   checksum="97637d76e1eaa7805effaab6203a245a"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:57.395162Z"
+   committed-rev="3062"
+   kind="file"
+   committed-date="2012-05-08T07:05:07.340713Z"
+   prop-time="2013-07-16T08:30:57.323158Z"/>
+<entry
+   name="CFrameTester.java"
+   checksum="f42992fadd6e04379db74efaf0be6d2d"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:57.453165Z"
+   committed-rev="2314"
+   kind="file"
+   committed-date="2011-06-08T07:27:19.871362Z"
+   prop-time="2013-07-16T08:30:57.354160Z"/>
+<entry
+   name="CNullChecker.java"
+   checksum="30f074125a38af7cb0eb0200eda26de5"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:57.441165Z"
+   committed-rev="2320"
+   kind="file"
+   committed-date="2011-06-09T03:11:13.659169Z"
+   prop-time="2013-07-16T08:30:57.349159Z"/>
+<entry
+   name="CNullProgressMonitor.java"
+   checksum="24c340c664a0b1a5d5732835cf0e6a44"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:57.476167Z"
+   committed-rev="3020"
+   kind="file"
+   committed-date="2012-04-05T07:33:55.999717Z"
+   prop-time="2013-07-16T08:30:57.367160Z"/>
+<entry
+   name="CReflectionUtils.java"
+   checksum="b5f07c671e01534b4707ae5bda6b3178"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:57.524169Z"
+   committed-rev="3083"
+   kind="file"
+   committed-date="2012-05-15T15:06:35.130138Z"
+   prop-time="2013-07-16T08:30:57.385161Z"/>
+<entry
+   name="ICChecker.java"
+   checksum="09a2c3dca89d8f20aabfef999a6a25b0"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:57.406162Z"
+   committed-rev="2320"
+   kind="file"
+   committed-date="2011-06-09T03:11:13.659169Z"
+   prop-time="2013-07-16T08:30:57.329158Z"/>
+<entry
+   name="ICProgressMonitor.java"
+   checksum="836670bcb860b86baf71dca32d1d744c"
+   last-author="macchan"
+   text-time="2013-07-16T08:30:57.464166Z"
+   committed-rev="1812"
+   kind="file"
+   committed-date="2010-09-16T09:50:06.422752Z"
+   prop-time="2013-07-16T08:30:57.360160Z"/>
+</wc-entries>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab"
+   name=""
+   revision="5226"
+   last-author="matsuzawa"
+   uuid="8e3d9786-9690-4157-98c2-ede1ae404ee5"
+   url="https://woolong.cs.inf.shizuoka.ac.jp/svn/slab/trunk/projects/commonlib/CommonLibrary/.settings"
+   committed-rev="5018"
+   kind="dir"
+   committed-date="2013-07-13T14:12:10.204426Z"/>
+<entry
+   name="org.eclipse.core.resources.prefs"
+   checksum="64517faea93f969617144f7b248e5fe0"
+   last-author="matsuzawa"
+   text-time="2013-07-16T08:31:00.605345Z"
+   committed-rev="5018"
+   kind="file"
+   committed-date="2013-07-13T14:12:10.204426Z"
+   prop-time="2013-07-16T08:31:00.582344Z"/>
+<entry
+   name="org.eclipse.jdt.core.prefs"
+   checksum="5079dd65a9bc28fd6c30586edda199db"
+   last-author="macchan"
+   text-time="2013-07-16T08:31:00.593345Z"
+   committed-rev="3020"
+   kind="file"
+   committed-date="2012-04-05T07:33:55.999717Z"
+   prop-time="2013-07-16T08:31:00.576344Z"/>
+</wc-entries>
