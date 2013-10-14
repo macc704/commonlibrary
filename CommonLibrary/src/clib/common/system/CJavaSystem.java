@@ -6,6 +6,8 @@
 package clib.common.system;
 
 import java.text.DecimalFormat;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -48,9 +50,27 @@ public class CJavaSystem {
 	public String getVersionString() {
 		return System.getProperty("java.version");
 	}
-	
-	public double getVersion(){
-		return Double.parseDouble(System.getProperty("java.specification.version"));
+
+	public double getVersion() {
+		return Double.parseDouble(System
+				.getProperty("java.specification.version"));
+	}
+
+	public String getPath() {
+		return System.getProperty("sun.boot.library.path");
+	}
+
+	public Map<String, String> getSystemEnv() {
+		return System.getenv();
+	}
+
+	public Map<String, String> getJVMEnv() {
+		Map<String, String> map = new HashMap<String, String>();
+		Properties prop = System.getProperties();
+		for (Object key : prop.keySet()) {
+			map.put((String) key, prop.getProperty((String) key));
+		}
+		return map;
 	}
 
 	/**

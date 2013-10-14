@@ -34,6 +34,7 @@ public class CActionUtils {
 		return action;
 	}
 
+	@Deprecated
 	public static CAction createJavaInformationAction() {
 		return createAction("Java Information", new ICTask() {
 			public void doTask() {
@@ -52,6 +53,8 @@ class JavaInfoPanel extends JPanel {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		String version = CJavaSystem.getInstance().getVersionString();
 		add(new JLabel("JVM Version: " + version));
+		String path = CJavaSystem.getInstance().getPath();
+		add(new JLabel("JVM Path: " + path));
 		String memoryInfo = CJavaSystem.getInstance().getMemoryInfo();
 		add(new JLabel(memoryInfo));
 	}
