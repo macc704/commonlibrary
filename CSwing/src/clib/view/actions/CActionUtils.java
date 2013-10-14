@@ -34,6 +34,7 @@ public class CActionUtils {
 		return action;
 	}
 
+	@Deprecated
 	public static CAction createJavaInformationAction() {
 		return createAction("Java Information", new ICTask() {
 			public void doTask() {

@@ -6,6 +6,7 @@
 package clib.view.table.model;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.table.AbstractTableModel;
@@ -18,6 +19,7 @@ public class CMapTableModel<K, V> extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
 
 	private Map<K, V> map;
+	private List<String> titles;
 
 	private ArrayList<K> cash;
 
@@ -29,15 +31,30 @@ public class CMapTableModel<K, V> extends AbstractTableModel {
 		this.map = map;
 		refresh();
 	}
-
-	public int getColumnCount() {
-		return 2;
+	
+	public void setTitles(List<String> titles) {
+		this.titles = titles;
 	}
 
+	@Override
+	public int getColumnCount() {
+		return 2;
+	}	
+
+	@Override
 	public int getRowCount() {
 		return map.size();
 	}
+	
+	@Override
+	public String getColumnName(int column) {
+		if(titles != null && titles.size() >= 2){
+			return titles.get(column);
+		}
+		return super.getColumnName(column);
+	}
 
+	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		K key = cash.get(rowIndex); // cash‚µ‚È‚¢‚ÆŒƒ’x‚©‚Á‚½
 		switch (columnIndex) {
@@ -54,4 +71,6 @@ public class CMapTableModel<K, V> extends AbstractTableModel {
 		cash = new ArrayList<K>(map.keySet());
 		fireTableDataChanged();
 	}
+
+	
 }
