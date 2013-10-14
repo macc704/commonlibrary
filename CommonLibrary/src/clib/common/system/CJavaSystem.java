@@ -52,6 +52,10 @@ public class CJavaSystem {
 	public double getVersion(){
 		return Double.parseDouble(System.getProperty("java.specification.version"));
 	}
+	
+	public String getPath() {
+		return System.getProperty("sun.boot.library.path");
+	}
 
 	/**
 	 * Java 仮想マシンのメモリ総容量、使用量、 使用を試みる最大メモリ容量の情報を返します。
