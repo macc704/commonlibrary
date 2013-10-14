@@ -150,6 +150,7 @@ public class CFile extends CFileElement {
 					before = buf[i];
 				}
 			}
+			is.close();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

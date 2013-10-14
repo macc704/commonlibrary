@@ -156,8 +156,8 @@ public abstract class CFileElement {
 		return getAbsolutePath().hashCode();
 	}
 
-	public void renameTo(String name) {
-		getJavaFile().renameTo(
+	public boolean renameTo(String name) {
+		return getJavaFile().renameTo(
 				getParentDirectory().getAbsolutePath().appendedPath(name)
 						.toJavaFile());
 	}
