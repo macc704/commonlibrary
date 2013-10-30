@@ -115,19 +115,24 @@ public class CJavaCodeDocument extends DefaultStyledDocument {
 	/*
 	 * Override to apply syntax highlighting after the document has been updated
 	 */
+
 	public void insertString(int offset, String str, AttributeSet attr)
 			throws BadLocationException {
-		if (str.equals("{"))
-			str = addMatchingBrace(offset);
-		super.insertString(offset, str, attr);
+
+		// 2013.10.30 全角の{で問題があった そこでそもそも何もしないように修正 matsuzawa
+		// if (str.equals("{")) {
+		// str = addMatchingBrace(offset);
+		// }
+
+		super.insertString(offset, str, attr);// これは呼ばないとテキストが表示できない
 
 		// 日本語変換中は、なにもしない by macchan
-		if (attr != null
-				&& attr.isDefined(StyleConstants.ComposedTextAttribute)) {
-			return;
-		}
+		// if (attr != null
+		// && attr.isDefined(StyleConstants.ComposedTextAttribute)) {
+		// return;
+		// }
 
-		processChangedLines(offset, str.length());
+		processChangedLines(offset, str.length());// これは呼ばないとキーワードはハイライトしてくれない．
 	}
 
 	/*
