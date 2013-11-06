@@ -46,6 +46,8 @@ public class CScreenShotTaker {
 	private Rectangle clipbounds;
 
 	private Font font;
+	
+	private JFileChooser chooser;
 
 	public CScreenShotTaker(Component comp) {
 		this(comp, null);
@@ -58,6 +60,25 @@ public class CScreenShotTaker {
 		String name = ((FontUIResource) UIManager.get("Label.font"))
 				.getFontName();
 		this.font = new Font(name, Font.PLAIN, 10);
+		initializeFileChooser();
+	}
+	
+	private void initializeFileChooser(){
+		this.chooser = new JFileChooser();
+		chooser.setFileFilter(new FileFilter() {
+			@Override
+			public String getDescription() {
+				return "JPEG File";
+			}
+
+			@Override
+			public boolean accept(File f) {
+				if(f.isDirectory()){
+					return true;
+				}
+				return f.getName().endsWith(".jpg");
+			}
+		});
 	}
 
 	public void setClipbounds(Rectangle clipbounds) {
@@ -123,20 +144,10 @@ public class CScreenShotTaker {
 		BufferedImage img = take();
 		ImageSelection.setClipboardImage(img);
 	}
+	
+
 
 	public void takeToFile() {
-		JFileChooser chooser = new JFileChooser();
-		chooser.setFileFilter(new FileFilter() {
-			@Override
-			public String getDescription() {
-				return "JPEG File";
-			}
-
-			@Override
-			public boolean accept(File f) {
-				return f.getName().endsWith(".jpg");
-			}
-		});
 		int result = chooser.showSaveDialog(SwingUtilities
 				.windowForComponent(comp));
 		if (result != JFileChooser.APPROVE_OPTION) {
