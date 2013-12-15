@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="CommonLibrarySrc"/>
+	<classpathentry kind="lib" path="/CommonLibrary/lib/commons-csv-20070730.jar"/>
+	<classpathentry kind="lib" path="/CommonLibrary/lib/CEncodingDetector.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/CommonLibrary"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
