@@ -80,6 +80,10 @@ public class CScreenShotTaker {
 			}
 		});
 	}
+	
+	public JFileChooser getChooser() {
+		return chooser;
+	}	
 
 	public void setClipbounds(Rectangle clipbounds) {
 		this.clipbounds = clipbounds;
