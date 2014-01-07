@@ -56,7 +56,16 @@ public class CJavaSystem {
 				.getProperty("java.specification.version"));
 	}
 
+	public String getJVMHome() {
+		return System.getProperty("java.home");
+	}
+
+	@Deprecated
 	public String getPath() {
+		return getLibraryPath();
+	}
+
+	public String getLibraryPath() {
 		return System.getProperty("sun.boot.library.path");
 	}
 

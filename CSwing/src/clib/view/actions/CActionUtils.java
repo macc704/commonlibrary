@@ -34,6 +34,9 @@ public class CActionUtils {
 		return action;
 	}
 
+	/*
+	 * @deprecated use CJavaInfoPanels#createJavaInformationAction()
+	 */
 	@Deprecated
 	public static CAction createJavaInformationAction() {
 		return createAction("Java Information", new ICTask() {
@@ -49,6 +52,7 @@ public class CActionUtils {
 class JavaInfoPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 
+	@SuppressWarnings("deprecation")
 	JavaInfoPanel() {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		String version = CJavaSystem.getInstance().getVersionString();
