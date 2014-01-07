@@ -6,9 +6,17 @@
 package clib.common.system;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+
+import clib.common.execution.CCommandExecuter;
+import clib.common.execution.CNullPrintStream;
+import clib.common.filesystem.CDirectory;
+import clib.common.filesystem.CFile;
+import clib.common.filesystem.CFileSystem;
 
 /**
  * CJavaSystem
@@ -101,7 +109,70 @@ public class CJavaSystem {
 		return info;
 	}
 
+	public String getJavacCommand() {
+		if (hasCommand("javac")) {
+			return "javac";
+		}
+
+		// else
+		if (isWindows()) {
+			return searchJavacWin();
+		}
+		return null;
+	}
+
+	private String searchJavacWin() {
+		// 1.JVM Home
+		CDirectory home = CFileSystem.getRootDirectory().findDirectory(
+				getJVMHome());
+		CFile file = home.findFile("bin/javac.exe");
+		if (file != null) {
+			return file.getAbsolutePath().toString();
+		}
+
+		// 2.C/Program Files
+		List<CFile> javacfiles;
+		javacfiles = findFiles("Program Files/Java", "bin/javac.exe");
+		if (!javacfiles.isEmpty()) {
+			return javacfiles.get(0).getAbsolutePath().toString();
+		}
+
+		// 3.C/Program Files(x86)
+		javacfiles = findFiles("Program Files(x86)/Java", "bin/javac.exe");
+		if (!javacfiles.isEmpty()) {
+			return javacfiles.get(0).getAbsolutePath().toString();
+		}
+
+		return null;
+	}
+
+	public List<CFile> findFiles(String dirpath, String filepath) {
+		List<CFile> javacfiles = new ArrayList<CFile>();
+		CDirectory javahomes = CFileSystem.getRootDirectory().findDirectory(
+				dirpath);
+		if (javahomes != null) {
+			for (CDirectory javahome : javahomes.getDirectoryChildren()) {
+				CFile javacfile = javahome.findFile(filepath);
+				if (javacfile != null) {
+					javacfiles.add(javacfile);
+				}
+			}
+		}
+		return javacfiles;
+	}
+
+	public boolean hasCommand(String command) {
+		try {
+			CCommandExecuter.execute(null, CNullPrintStream.INSTANCE,
+					CNullPrintStream.INSTANCE, null, command);
+			return true;
+		} catch (Exception ex) {
+			return false;
+		}
+	}
+
 	public static void main(String[] args) {
+		System.out.println(CJavaSystem.getInstance().getJavacCommand());
 		Properties prop = System.getProperties();
 		for (Object key : prop.keySet()) {
 			System.out.print(key);

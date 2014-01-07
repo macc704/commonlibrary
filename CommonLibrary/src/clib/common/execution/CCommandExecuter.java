@@ -60,7 +60,7 @@ public class CCommandExecuter extends CAbstractModelObject {
 		this(null, null, null, null);
 	}
 
-	public CCommandExecuter(CDirectory dir, PrintStream out, PrintStream err,
+	private CCommandExecuter(CDirectory dir, PrintStream out, PrintStream err,
 			ICConsoleInputable input) {
 		if (dir != null) {
 			this.dir = dir;
@@ -275,5 +275,6 @@ public class CCommandExecuter extends CAbstractModelObject {
 
 		input.stop();
 		System.out.println("CCommandExecuter Testing End");
+		System.exit(0);
 	}
 }
