@@ -8,12 +8,12 @@ public class CFileListDifference {
 	private Kind kind;
 	private String path;
 
-	public CFileListDifference(Kind command, String path) {
-		this.kind = command;
+	public CFileListDifference(Kind kind, String path) {
+		this.kind = kind;
 		this.path = path;
 	}
 
-	public Kind getCommand() {
+	public Kind getKind() {
 		return kind;
 	}
 

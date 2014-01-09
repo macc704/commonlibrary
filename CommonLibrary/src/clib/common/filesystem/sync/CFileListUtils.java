@@ -8,7 +8,7 @@ import org.junit.Test;
 import clib.common.filesystem.CDirectory;
 import clib.common.filesystem.CFileSystem;
 
-public class CFIleListUtils {
+public class CFileListUtils {
 
 	public static List<CFileListDifference> compare(CFileList master,
 			CFileList copy) {
