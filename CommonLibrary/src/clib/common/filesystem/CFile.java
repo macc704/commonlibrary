@@ -136,6 +136,12 @@ public class CFile extends CFileElement {
 		}
 	}
 
+	public void saveAsByte(byte[] bytes) {
+		CFileOutputStream out = openOutputStream();
+		out.write(bytes);
+		out.close();
+	}
+
 	public String loadTextAsIs() {
 		String separator = detectSeparator();
 		return loadText(separator);
@@ -295,5 +301,12 @@ public class CFile extends CFileElement {
 		String loadText = file.loadText();
 		System.out.println("result=" + text.equals(loadText) + " text=" + text
 				+ " loadText=" + loadText);
+
+		byte[] contents = file.loadAsByte();
+		System.out.println("contents:" + new String(contents));
+		System.out.println("contentsSring:" + new String(contents));
+		file.saveAsByte(contents);
+		System.out.println("loadText:" + file.loadText());
+		file.delete();
 	}
 }
