@@ -5,6 +5,7 @@
  */
 package clib.common.filesystem;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -115,6 +116,21 @@ public class CFile extends CFileElement {
 			}
 
 			return new CStreamWriter(openOutputStream(append), encodingOut);
+		} catch (Exception ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+
+	public byte[] loadAsByte() {
+		try {
+			CFileInputStream in = openInputStream();
+			ByteArrayOutputStream byteArrayStream = new ByteArrayOutputStream();
+			byte[] buf = new byte[2048];
+			int len = 0;
+			while ((len = in.read(buf)) > 0) {
+				byteArrayStream.write(buf, 0, len);
+			}
+			return byteArrayStream.toByteArray();
 		} catch (Exception ex) {
 			throw new RuntimeException(ex);
 		}
