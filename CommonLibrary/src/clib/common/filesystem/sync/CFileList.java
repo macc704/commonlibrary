@@ -45,6 +45,9 @@ public class CFileList {
 
 	private void build0(CDirectory basedir, CDirectory dir) {
 		for (CFileElement child : dir.getChildren()) {
+			if (child.getNameByString().startsWith(".")) {
+				continue;
+			}
 			if (child.isFile()) {
 				String sha1 = CDigest.getSha1((CFile) child);
 				String relativePath = child.getRelativePath(basedir).toString();
