@@ -1,5 +1,6 @@
 package clib.common.filesystem.sync;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -12,7 +13,9 @@ import clib.common.filesystem.CFile;
 import clib.common.filesystem.CFileElement;
 import clib.common.filesystem.CFileSystem;
 
-public class CFileList {
+public class CFileList implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	public static final String DELIMITER = ":";
 

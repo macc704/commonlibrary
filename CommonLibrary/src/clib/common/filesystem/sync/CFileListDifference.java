@@ -1,6 +1,11 @@
 package clib.common.filesystem.sync;
 
-public class CFileListDifference {
+import java.io.Serializable;
+
+public class CFileListDifference implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	public enum Kind {
 		CREATED, UPDATED, REMOVED
 	};
