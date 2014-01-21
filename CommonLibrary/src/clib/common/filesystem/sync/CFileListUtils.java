@@ -10,8 +10,8 @@ import clib.common.filesystem.CFileSystem;
 
 public class CFileListUtils {
 
-	public static List<CFileListDifference> compare(CFileList master,
-			CFileList copy) {
+	public static List<CFileListDifference> compare(CFileHashList master,
+			CFileHashList copy) {
 		List<CFileListDifference> differences = new ArrayList<CFileListDifference>();
 		List<String> remainingPaths = copy.getPaths();
 		for (String path : master.getPaths()) {
@@ -42,8 +42,8 @@ public class CFileListUtils {
 	public static void main(String[] args) {
 		CDirectory base = CFileSystem.getExecuteDirectory().findDirectory(
 				"testdata/filesync");
-		CFileList test1 = new CFileList(base.findFile("list1.txt"));
-		CFileList test2 = new CFileList(base.findFile("list2.txt"));
+		CFileHashList test1 = new CFileHashList(base.findFile("list1.txt"));
+		CFileHashList test2 = new CFileHashList(base.findFile("list2.txt"));
 		System.out.println(compare(test2, test1));
 		System.out.println(compare(test1, test2));
 	}

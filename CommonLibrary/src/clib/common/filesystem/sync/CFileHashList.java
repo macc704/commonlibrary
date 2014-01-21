@@ -19,7 +19,7 @@ import clib.common.filesystem.CFileSystem;
  * パス，SHA1ハッシュのマップを持つ．
  * 作成時，デフォルトで.から始まるファイルをはじくようになっている．
  */
-public class CFileList implements Serializable {
+public class CFileHashList implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -28,15 +28,15 @@ public class CFileList implements Serializable {
 	/* Path, SHA1のリスト */
 	private Map<String, String> map = new LinkedHashMap<String, String>();
 
-	public CFileList(CDirectory basedir) {
+	public CFileHashList(CDirectory basedir) {
 		build(basedir, CFileFilter.IGNORE_BY_NAME_FILTER(".*"));
 	}
 
-	public CFileList(CDirectory basedir, CFileFilter filter) {
+	public CFileHashList(CDirectory basedir, CFileFilter filter) {
 		build(basedir, filter);
 	}
 
-	public CFileList(CFile file) {
+	public CFileHashList(CFile file) {
 		unserialize(file);
 	}
 
@@ -95,21 +95,21 @@ public class CFileList implements Serializable {
 		CDirectory dir = CFileSystem.getExecuteDirectory().findDirectory(
 				"testdata/filelist");
 		{
-			CFileList list = new CFileList(dir);
+			CFileHashList list = new CFileHashList(dir);
 			CFile out = CFileSystem.getExecuteDirectory().findOrCreateFile(
 					"list1.txt");
 			list.serialize(out);
 		}
 
 		{
-			CFileList list = new CFileList(dir, CFileFilter.ALL_ACCEPT_FILTER());
+			CFileHashList list = new CFileHashList(dir, CFileFilter.ALL_ACCEPT_FILTER());
 			CFile out = CFileSystem.getExecuteDirectory().findOrCreateFile(
 					"list2.txt");
 			list.serialize(out);
 		}
 
 		{
-			CFileList list = new CFileList(dir,
+			CFileHashList list = new CFileHashList(dir,
 					CFileFilter.IGNORE_BY_NAME_FILTER(".*", "*.class", "*.xml"));
 			CFile out = CFileSystem.getExecuteDirectory().findOrCreateFile(
 					"list3.txt");
