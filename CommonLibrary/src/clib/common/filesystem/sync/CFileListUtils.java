@@ -41,7 +41,7 @@ public class CFileListUtils {
 	@Test
 	public static void main(String[] args) {
 		CDirectory base = CFileSystem.getExecuteDirectory().findDirectory(
-				"testsrc/clib/common/filesystem/sync");
+				"testdata/filesync");
 		CFileList test1 = new CFileList(base.findFile("list1.txt"));
 		CFileList test2 = new CFileList(base.findFile("list2.txt"));
 		System.out.println(compare(test2, test1));
