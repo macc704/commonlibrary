@@ -41,7 +41,7 @@
 		<link>
 			<name>cswingsrc</name>
 			<type>2</type>
-			<location>/Users/ohata/git/commonlibrary/CSwing/src</location>
+			<locationURI>GIT_PARENT/CSwing/src</locationURI>
 		</link>
 	</linkedResources>
 	<variableList>
