@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="cswingsrc"/>
 	<classpathentry kind="src" path="CommonLibrarySrc"/>
 	<classpathentry kind="lib" path="/CommonLibrary/lib/commons-csv-20070730.jar"/>
 	<classpathentry kind="lib" path="/CommonLibrary/lib/CEncodingDetector.jar"/>
