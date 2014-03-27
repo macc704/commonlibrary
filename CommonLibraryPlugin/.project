@@ -34,14 +34,14 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>CSwingSrc</name>
+			<type>2</type>
+			<locationURI>GIT_PARENT/CSwing/src</locationURI>
+		</link>
+		<link>
 			<name>CommonLibrarySrc</name>
 			<type>2</type>
 			<locationURI>GIT_PARENT/CommonLibrary/src</locationURI>
-		</link>
-		<link>
-			<name>cswingsrc</name>
-			<type>2</type>
-			<location>/Users/ohata/git/commonlibrary/CSwing/src</location>
 		</link>
 	</linkedResources>
 	<variableList>
