@@ -48,4 +48,7 @@ Export-Package: clib.app,
  org.apache.commons.csv,
  org.apache.commons.csv.writer,
  org.mozilla.intl.chardet
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ lib/CEncodingDetector.jar,
+ lib/commons-codec-1.9.jar,
+ lib/commons-csv-20070730.jar
