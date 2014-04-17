@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CommonLibrary
 Bundle-SymbolicName: jp.ac.shizuoka.inf.ce.cs.commonlibrary;singleton:=true
-Bundle-Version: 3.7.5
+Bundle-Version: 3.7.4
 Bundle-Activator: clib.common.CommonLibPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
