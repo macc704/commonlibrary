@@ -10,6 +10,7 @@
 	<classpathentry kind="src" path="CEncodingDetectorSrc"/>
 	<classpathentry kind="src" path="CSwingSrc"/>
 	<classpathentry kind="src" path="CommonLibrarySrc"/>
+	<classpathentry kind="src" path="CPreferenceFW"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/CEncodingDetector.jar"/>
 	<classpathentry kind="lib" path="lib/commons-codec-1.9.jar"/>
