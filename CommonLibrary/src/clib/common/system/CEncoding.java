@@ -34,8 +34,11 @@ public class CEncoding {
 			return Shift_JIS;
 		} else if ("JISAUTODETECT".equals(upperCase)) {
 			return JISAutoDetect;
+		} else if ("UNKNOWN".equals(upperCase)) {
+			return UNKNOWN;
 		}
-		return UNKNOWN;
+		// else
+		return new CEncoding(text);
 	}
 
 	private String text;

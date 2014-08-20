@@ -14,7 +14,7 @@ import jp.matsuzawa.ed.EncodingDetector;
  * @author macchan
  */
 public class CEncodingDetector {
-
+	
 	public static CEncoding detect(File file) {
 		return CEncoding.get(EncodingDetector.detect(file));
 	}
