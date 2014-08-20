@@ -12,9 +12,7 @@ public class Version {
 			}
 			String[] tokens = text.split("[.]");
 			int len = tokens.length;
-			System.out.println(len);
 			if (len >= 1) {
-				System.out.println(tokens[0].length());
 				major = Integer.parseInt(tokens[0].trim());
 			}
 			if (len >= 2) {

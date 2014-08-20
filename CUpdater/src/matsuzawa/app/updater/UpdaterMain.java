@@ -237,8 +237,8 @@ public class UpdaterMain {
 		}
 
 		boolean necessaryUpdate() {
-			System.out.println(serverVersion);
-			System.out.println(localVersion);
+			// System.out.println(serverVersion);
+			// System.out.println(localVersion);
 			return serverVersion.isNewer(localVersion);
 		}
 
