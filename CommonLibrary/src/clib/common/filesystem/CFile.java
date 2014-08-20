@@ -86,7 +86,7 @@ public class CFile extends CFileElement {
 				if (len == 3 && firstThree[0] == (byte) 0xEF
 						&& firstThree[1] == (byte) 0xBB
 						&& firstThree[2] == (byte) 0xBF) {
-					return new CStreamReader(openInputStream(), CEncoding.UTF8);
+					return new CStreamReader(openInputStream(), CEncoding.UTF8WBOM);
 				}
 
 				if (CEncodingDetector.detect(getJavaFile()) == CEncoding.UTF8) {
@@ -107,7 +107,7 @@ public class CFile extends CFileElement {
 	public CStreamWriter openWriter(boolean append) {
 		try {
 			// when UTF-8 create a BOM
-			if (append == false && getEncodingOut().equals(CEncoding.UTF8)) {
+			if (append == false && getEncodingOut().equals(CEncoding.UTF8WBOM)) {
 				OutputStream os = openOutputStream();
 				byte[] BOM = new byte[] { (byte) 0xEF, (byte) 0xBB, (byte) 0xBF };
 				os.write(BOM);

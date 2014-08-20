@@ -27,6 +27,9 @@ public class CStreamReader {
 	 */
 	public CStreamReader(InputStream inputStream, CEncoding enc) {
 		try {
+			if(enc == CEncoding.UTF8WBOM){
+				inputStream.skip(3);
+			}
 			this.reader = new BufferedReader(new InputStreamReader(inputStream,
 					enc.toString()));
 			toNextLine();

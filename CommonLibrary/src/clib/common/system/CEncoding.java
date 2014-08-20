@@ -12,6 +12,7 @@ public class CEncoding {
 	public static final CEncoding UNKNOWN = new CEncoding("UNKNOWN");
 	public static final CEncoding Shift_JIS = new CEncoding("SJIS");
 	public static final CEncoding UTF8 = new CEncoding("UTF-8");
+	public static final CEncoding UTF8WBOM = new CEncoding("UTF-8");
 	public static final CEncoding JISAutoDetect = new CEncoding("JISAutoDetect");
 
 	public static CEncoding getVMEncoding() {
