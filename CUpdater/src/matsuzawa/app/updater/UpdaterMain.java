@@ -33,6 +33,7 @@ import clib.view.progress.CPanelProcessingMonitor;
  * version 1.1.0 2012.10.03 updater.jarは更新しないように変更（更新すると現在実行中のプログラムでエラーとなる．）
  * version 1.2.0 2012.10.23 name.txtの導入
  * version 1.2.1 2012.10.26 英語バージョン
+ * version 1.3.0 2014.08.20 国際化&mac-command対応バージョン
  * 
  * @author macchan
  * 
@@ -46,23 +47,23 @@ public class UpdaterMain {
 		new UpdaterMain().run();
 	}
 
-	public static final String VERSION = "1.2.1";
+	public static final String VERSION = "1.3.0"; //$NON-NLS-1$
 
-	public static final String SERVER_VERSION_FILE = "version.txt";
+	public static final String SERVER_VERSION_FILE = "version.txt"; //$NON-NLS-1$
 
 	private final CDirectory base = CFileSystem.getExecuteDirectory();
-	private final CDirectory updater = base.findOrCreateDirectory(".updater");
-	private final CDirectory tmp = updater.findOrCreateDirectory("tmp");
-	private final CFile locationFile = updater.findFile("location.txt");
+	private final CDirectory updater = base.findOrCreateDirectory(".updater"); //$NON-NLS-1$
+	private final CDirectory tmp = updater.findOrCreateDirectory("tmp"); //$NON-NLS-1$
+	private final CFile locationFile = updater.findFile("location.txt"); //$NON-NLS-1$
 	private final CFile localVersionFile = updater
-			.findOrCreateFile("version.txt");
-	private final CFile nameFile = updater.findOrCreateFile("name.txt");
+			.findOrCreateFile("version.txt"); //$NON-NLS-1$
+	private final CFile nameFile = updater.findOrCreateFile("name.txt"); //$NON-NLS-1$
 
 	void run() {
 		final CPanelProcessingMonitor panel = new CPanelProcessingMonitor();
 		int height = (int) panel.getPreferredSize().getHeight();
 		panel.setPreferredSize(new Dimension(300, height + 20));
-		String title = "Updater - " + VERSION + " for " + nameFile.loadText();
+		String title = "Updater - " + VERSION + " for " + nameFile.loadText(); //$NON-NLS-1$ //$NON-NLS-2$
 		panel.doTaskWithDialog(title, new ICTask() {
 			public void doTask() {
 				doUpdate(panel);
@@ -75,9 +76,8 @@ public class UpdaterMain {
 	private void doUpdate(ICProgressMonitor monitor) {
 		try {
 			if (locationFile == null) {
-				// throw new RuntimeException("設定ファイルが読み込めません．");
 				throw new RuntimeException(
-						"Failed to read the property file on the server.");
+						Messages.getString("Updater.FailedToRead")); //$NON-NLS-1$
 			}
 
 			String sitebase = locationFile.loadText();
@@ -85,25 +85,21 @@ public class UpdaterMain {
 				sitebase += "/";
 			}
 
-			// monitor.setWorkTitle("サーバに問い合わせ中");
-			monitor.setWorkTitle("Connecting to the server.");
+			monitor.setWorkTitle(Messages.getString("Updater.Connecting")); //$NON-NLS-1$
 			UpdateSiteManager manager = new UpdateSiteManager(sitebase);
 			manager.checkVersion();// throws Exception
 
-			// System.out.println("necessaryUpdate = " +
-			// manager.necessaryUpdate());
 			if (!manager.necessaryUpdate()) {
-				// JOptionPane.showMessageDialog(null, "お使いのソフトウエアは最新バージョンです．");
 				JOptionPane.showMessageDialog(null,
-						"Your software is the newest one.");
+						Messages.getString("Updater.YoursLatest")); //$NON-NLS-1$
 				return;
 			}
 
-			// int result = JOptionPane.showConfirmDialog(null, "最新バージョン"+
-			// manager.getServerVersion() + "があります．更新しますか？");
-			int result = JOptionPane.showConfirmDialog(null,
-					"The newest version " + manager.getServerVersion()
-							+ " is available. Would you like to update?");
+			int result = JOptionPane
+					.showConfirmDialog(
+							null,
+							Messages.getString("Updater.Latest") + manager.getServerVersion() //$NON-NLS-1$
+									+ Messages.getString("Updater.LikeUpdate")); //$NON-NLS-1$
 			if (result == JOptionPane.CANCEL_OPTION
 					|| result == JOptionPane.NO_OPTION) {
 				return;
@@ -116,7 +112,8 @@ public class UpdaterMain {
 
 			delete(manager);
 			extract(newFile);
-			localVersionFile.saveText(manager.getServerVersion());
+			makeExecutable(base);
+			localVersionFile.saveText(manager.getServerVersion().toString());
 		} catch (Exception ex) {
 			// JOptionPane.showMessageDialog(null, ex.getMessage());
 			CErrorDialog.show(null, ex.getMessage(), ex);
@@ -134,11 +131,11 @@ public class UpdaterMain {
 	}
 
 	private void extract(CFile zipfile) {
-		CDirectory ziptmp = tmp.findOrCreateDirectory("ziptmp");
+		CDirectory ziptmp = tmp.findOrCreateDirectory("ziptmp"); //$NON-NLS-1$
 		CIOUtils.unZip(zipfile, ziptmp);
 		// ziptmp.copyTo(base);
 		for (CFileElement child : ziptmp.getChildren()) {
-			if (child.getName().toString().equals("updater.jar")) {
+			if (child.getName().toString().equals("updater.jar")) { //$NON-NLS-1$
 				return;
 			}
 			child.copyTo(base);
@@ -146,31 +143,42 @@ public class UpdaterMain {
 		ziptmp.delete();
 	}
 
+	private void makeExecutable(CDirectory dir) {
+		for (CFileElement child : dir.getChildren()) {
+			if (child.getName().toString().endsWith(".command")) { //$NON-NLS-1$
+				child.toJavaFile().setExecutable(true);
+			}
+			if (child.isDirectory()) {
+				makeExecutable((CDirectory) child);
+			}
+		}
+	}
+
 	class UpdateSiteManager {
 		private final String sitebase;
-		private String serverVersion;
+		private Version serverVersion;
 		private String serverFilename;
-		private String localVersion;
+		private Version localVersion;
 		private List<String> deletionList;
 
 		public UpdateSiteManager(String sitebase) {
 			this.sitebase = sitebase;
 		}
 
-		public String getServerVersion() {
+		public Version getServerVersion() {
 			return serverVersion;
 		}
 
-		public String getLocalVersion() {
+		public Version getLocalVersion() {
 			return localVersion;
 		}
 
 		boolean checkVersion() {
 			try {
 				// local version
-				this.localVersion = localVersionFile.loadText();
+				this.localVersion = new Version(localVersionFile.loadText());
 				if (localVersion == null) {
-					localVersion = "";
+					localVersion = new Version(""); //$NON-NLS-1$
 				}
 
 				// server version
@@ -178,12 +186,11 @@ public class UpdaterMain {
 
 				return true;
 			} catch (UnknownHostException ex) {
-				// throw new RuntimeException("サーバに接続できません．", ex);
-				throw new RuntimeException("Failed to connect the server.", ex);
-			} catch (FileNotFoundException ex) {
-				// throw new RuntimeException("サーバにファイルが見つかりません．", ex);
 				throw new RuntimeException(
-						"Failed to find a software file on the server.", ex);
+						Messages.getString("Updater.FailedToServer"), ex); //$NON-NLS-1$
+			} catch (FileNotFoundException ex) {
+				throw new RuntimeException(
+						Messages.getString("Updater.FileNotFound"), ex); //$NON-NLS-1$
 			} catch (Exception ex) {
 				throw new RuntimeException(ex);
 			}
@@ -193,7 +200,7 @@ public class UpdaterMain {
 			String versionFileURL = sitebase + SERVER_VERSION_FILE;
 			String serverVersionFileText = downloadAsString(versionFileURL,
 					CNullProgressMonitor.INSTANCE);
-			CFile file = tmp.findOrCreateFile("a");
+			CFile file = tmp.findOrCreateFile("a"); //$NON-NLS-1$
 			file.saveText(serverVersionFileText);
 			List<String> lines = file.loadTextAsList();
 			file.delete();
@@ -203,9 +210,9 @@ public class UpdaterMain {
 
 		void parseServerVersion(List<String> lines) {
 			for (String line : lines) {
-				if (line.startsWith("v")) {
-					String[] tokens = line.split(" ");
-					this.serverVersion = tokens[1];
+				if (line.startsWith("v")) { //$NON-NLS-1$
+					String[] tokens = line.split(" "); //$NON-NLS-1$
+					this.serverVersion = new Version(tokens[1]);
 					this.serverFilename = tokens[2];
 					break;
 				}
@@ -217,20 +224,22 @@ public class UpdaterMain {
 
 			this.deletionList = new ArrayList<String>();
 			for (String line : lines) {
-				if (line.startsWith("v")) {
-					String[] tokens = line.split(" ");
+				if (line.startsWith("v")) { //$NON-NLS-1$
+					String[] tokens = line.split(" "); //$NON-NLS-1$
 					if (localVersion.equals(tokens[2])) {
 						break;
 					}
-				} else if (line.startsWith("d")) {
-					String[] tokens = line.split(" ");
+				} else if (line.startsWith("d")) { //$NON-NLS-1$
+					String[] tokens = line.split(" "); //$NON-NLS-1$
 					deletionList.add(tokens[1]);
 				}
 			}
 		}
 
 		boolean necessaryUpdate() {
-			return !serverVersion.equals(localVersion);
+			System.out.println(serverVersion);
+			System.out.println(localVersion);
+			return serverVersion.isNewer(localVersion);
 		}
 
 		String getFilename() {
@@ -239,7 +248,7 @@ public class UpdaterMain {
 		}
 
 		String getFileURL() {
-			return sitebase + "/" + getFilename();
+			return sitebase + "/" + getFilename(); //$NON-NLS-1$
 		}
 	}
 
@@ -259,7 +268,7 @@ public class UpdaterMain {
 	private void download(String urlString, OutputStream out,
 			ICProgressMonitor monitor) throws Exception {
 		URL url = new URL(urlString);
-		monitor.setWorkTitle("Downloading " + url.toString());
+		monitor.setWorkTitle(Messages.getString("Updater.Downloading") + url.toString()); //$NON-NLS-1$
 		URLConnection conn = url.openConnection();
 		monitor.setMax(conn.getContentLength());
 
