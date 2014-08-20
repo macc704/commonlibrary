@@ -10,6 +10,8 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
+import javax.swing.event.UndoableEditEvent;
+import javax.swing.event.UndoableEditListener;
 
 import clib.common.filesystem.CFile;
 import clib.common.filesystem.CFileSystem;
@@ -23,6 +25,8 @@ public class CSimpleTextEditor extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private JTextPane textPane = new JTextPane();
+	private ICDirtyStateListener dirtyStateListener;
+	private boolean dirty;
 
 	private CFile file;
 
@@ -41,6 +45,17 @@ public class CSimpleTextEditor extends JPanel {
 
 		scrollPane.setViewportView(textPane);
 		add(scrollPane);
+
+		textPane.getDocument().addUndoableEditListener(
+				new UndoableEditListener() {
+					public void undoableEditHappened(UndoableEditEvent e) {
+						setDirty(true);
+					}
+				});
+	}
+
+	public void setDirtyStateListener(ICDirtyStateListener dirtyStateListener) {
+		this.dirtyStateListener = dirtyStateListener;
 	}
 
 	/**
@@ -71,11 +86,13 @@ public class CSimpleTextEditor extends JPanel {
 	 */
 	public void setEditorText(String text) {
 		textPane.setText(text);
+		setDirty(false);
 	}
 
 	public void doSave() {
 		if (file != null) {
 			file.saveText(getEditorText());
+			setDirty(false);
 		} else {
 			throw new RuntimeException("file is null on save()");
 		}
@@ -87,6 +104,21 @@ public class CSimpleTextEditor extends JPanel {
 		} else {
 			throw new RuntimeException("file is null on load()");
 		}
+	}
+
+	public void setDirty(boolean dirty) {
+		if (this.dirty == dirty) {
+			return;
+		}
+
+		this.dirty = dirty;
+		if (dirtyStateListener != null) {
+			dirtyStateListener.dirtyStateChanged(this.dirty);
+		}
+	}
+
+	public boolean isDirty() {
+		return dirty;
 	}
 
 	public static void main(String[] args) {

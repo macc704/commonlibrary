@@ -27,6 +27,8 @@ public class COKCancelDialog extends JDialog {
 
 	private boolean OK = false;
 
+	private ICOKCancelDialogListener okCancelDialogListener;
+
 	public COKCancelDialog(Frame owner, String title, JComponent component) {
 		super(owner, true);// modal
 
@@ -38,6 +40,10 @@ public class COKCancelDialog extends JDialog {
 		JButton buttonOK = new JButton("OK");
 		buttonOK.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
+				if (okCancelDialogListener != null
+						&& okCancelDialogListener.canOkProcess() == false) {
+					return;
+				}
 				OK = true;
 				COKCancelDialog.this.setVisible(false);
 			}
@@ -46,6 +52,10 @@ public class COKCancelDialog extends JDialog {
 		JButton buttonCancel = new JButton("Cancel");
 		buttonCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
+				if (okCancelDialogListener != null
+						&& okCancelDialogListener.canCancelProcess() == false) {
+					return;
+				}
 				OK = false;
 				COKCancelDialog.this.setVisible(false);
 			}
@@ -58,6 +68,11 @@ public class COKCancelDialog extends JDialog {
 		getContentPane().add(south, BorderLayout.SOUTH);
 
 		setComponent(component);
+	}
+
+	public void setOkCancelDialogListener(
+			ICOKCancelDialogListener okCancelDialogListener) {
+		this.okCancelDialogListener = okCancelDialogListener;
 	}
 
 	public void setComponent(JComponent component) {
