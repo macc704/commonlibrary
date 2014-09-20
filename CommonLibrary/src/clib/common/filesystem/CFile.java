@@ -107,7 +107,7 @@ public class CFile extends CFileElement {
 	public CStreamWriter openWriter(boolean append) {
 		try {
 			// when UTF-8 create a BOM
-			if (append == false && getEncodingOut().equals(CEncoding.UTF8WBOM)) {
+			if (append == false && getEncodingOut() == CEncoding.UTF8WBOM) {
 				OutputStream os = openOutputStream();
 				byte[] BOM = new byte[] { (byte) 0xEF, (byte) 0xBB, (byte) 0xBF };
 				os.write(BOM);

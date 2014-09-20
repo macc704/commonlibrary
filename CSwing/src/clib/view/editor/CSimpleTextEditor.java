@@ -6,16 +6,22 @@
 package clib.view.editor;
 
 import java.awt.BorderLayout;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
+import javax.swing.KeyStroke;
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.event.UndoableEditListener;
+import javax.swing.undo.UndoManager;
 
 import clib.common.filesystem.CFile;
 import clib.common.filesystem.CFileSystem;
+import clib.common.thread.ICTask;
 import clib.common.utils.CFrameTester;
+import clib.view.actions.CAction;
+import clib.view.actions.CActionUtils;
 
 /**
  * @author macchan
@@ -29,6 +35,8 @@ public class CSimpleTextEditor extends JPanel {
 	private boolean dirty;
 
 	private CFile file;
+
+	private UndoManager undoManager = new UndoManager();
 
 	public CSimpleTextEditor() {
 		initialize();
@@ -52,6 +60,7 @@ public class CSimpleTextEditor extends JPanel {
 						setDirty(true);
 					}
 				});
+		textPane.getDocument().addUndoableEditListener(undoManager);
 	}
 
 	public void setDirtyStateListener(ICDirtyStateListener dirtyStateListener) {
@@ -119,6 +128,65 @@ public class CSimpleTextEditor extends JPanel {
 
 	public boolean isDirty() {
 		return dirty;
+	}
+
+	// public JTextPane getTextPane() {
+	// return textPane;
+	// }
+
+	public CAction getCopyAction() {
+		CAction action = CActionUtils.createAction("Copy", new ICTask() {
+			public void doTask() {
+				textPane.copy();
+			}
+		});
+		action.setAcceralator(KeyStroke.getKeyStroke(KeyEvent.VK_C,
+				KeyEvent.META_MASK));
+		return action;
+	}
+
+	public CAction getPasteAction() {
+		CAction action = CActionUtils.createAction("Paste", new ICTask() {
+			public void doTask() {
+				textPane.paste();
+			}
+		});
+		action.setAcceralator(KeyStroke.getKeyStroke(KeyEvent.VK_V,
+				KeyEvent.META_MASK));
+		return action;
+	}
+
+	public CAction getCutAction() {
+		CAction action = CActionUtils.createAction("Cut", new ICTask() {
+			public void doTask() {
+				textPane.cut();
+			}
+		});
+		action.setAcceralator(KeyStroke.getKeyStroke(KeyEvent.VK_X,
+				KeyEvent.META_MASK));
+		return action;
+	}
+
+	public CAction getUndoAction() {
+		CAction action = CActionUtils.createAction("Undo", new ICTask() {
+			public void doTask() {
+				undoManager.undo();
+			}
+		});
+		action.setAcceralator(KeyStroke.getKeyStroke(KeyEvent.VK_Z,
+				KeyEvent.META_MASK));
+		return action;
+	}
+
+	public CAction getRedoAction() {
+		CAction action = CActionUtils.createAction("Redo", new ICTask() {
+			public void doTask() {
+				undoManager.redo();
+			}
+		});
+		action.setAcceralator(KeyStroke.getKeyStroke(KeyEvent.VK_Z,
+				KeyEvent.META_MASK | KeyEvent.SHIFT_MASK));
+		return action;
 	}
 
 	public static void main(String[] args) {
