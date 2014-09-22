@@ -45,6 +45,14 @@ public class CVocaburary {
 		return new ArrayList<String>(getHistgram().keySet());
 	}
 
+	public void removeByList(List<String> words) {
+		for (String word : words) {
+			if (map.containsKey(word)) {
+				map.remove(word);
+			}
+		}
+	}
+
 	public String toString() {
 		return getHistgram().toString();
 	}
