@@ -27,7 +27,12 @@ import clib.common.system.CJavaSystem;
  */
 public class CFile extends CFileElement {
 
-	public static final CEncoding ENCODING_IN_DEFAULT = CEncoding.JISAutoDetect;
+	public static CEncoding ENCODING_IN_DEFAULT = CEncoding.getSystemEncoding();
+	static{
+		if (CJavaSystem.getInstance().isJapaneseOS()) {
+			ENCODING_IN_DEFAULT = CEncoding.JISAutoDetect;
+		}
+	}
 	public static final CEncoding ENCODING_OUT_DEFAULT = CEncoding
 			.getSystemEncoding();
 
@@ -89,7 +94,8 @@ public class CFile extends CFileElement {
 					return new CStreamReader(openInputStream(), CEncoding.UTF8WBOM);
 				}
 
-				if (CEncodingDetector.detect(getJavaFile()) == CEncoding.UTF8) {
+				CEncoding enc = CEncodingDetector.detect(getJavaFile());
+				if (enc == CEncoding.UTF8) {
 					return new CStreamReader(openInputStream(), CEncoding.UTF8);
 				}
 			}

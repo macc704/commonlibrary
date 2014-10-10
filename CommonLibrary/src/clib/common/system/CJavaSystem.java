@@ -9,6 +9,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
 
@@ -170,6 +171,10 @@ public class CJavaSystem {
 			return false;
 		}
 	}
+	
+	public boolean isJapaneseOS() {
+		return Locale.JAPAN.getCountry().equals(Locale.getDefault().getCountry());
+	}
 
 	public static void main(String[] args) {
 		System.out.println(CJavaSystem.getInstance().getJavacCommand());
@@ -182,4 +187,6 @@ public class CJavaSystem {
 		}
 		// System.out.println(System.getProperties());
 	}
+
+
 }
