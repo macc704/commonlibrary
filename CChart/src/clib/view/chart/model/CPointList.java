@@ -150,5 +150,9 @@ public class CPointList {
 	public Iterator<Point2D> iterator() {
 		return this.points.iterator();
 	}
+	
+	public List<Point2D> getPoints() {
+		return points;
+	}
 
 }
