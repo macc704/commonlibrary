@@ -26,8 +26,13 @@ import clib.view.chart.model.ICDataSet;
 public class CVChart {
 
 	public static final Color[] COLORS = new Color[] { Color.BLACK, Color.BLUE,
-			Color.RED, Color.GREEN, Color.MAGENTA, Color.CYAN, Color.ORANGE,
-			Color.PINK, Color.YELLOW };
+			Color.RED, Color.GREEN, Color.YELLOW, Color.MAGENTA, Color.CYAN,
+			Color.ORANGE, Color.PINK, Color.DARK_GRAY, Color.BLUE.darker(),
+			Color.RED.darker(), Color.GREEN.darker(), Color.YELLOW.darker(),
+			Color.BLUE.brighter(), Color.RED.brighter(),
+			Color.GREEN.brighter(), Color.YELLOW.brighter(),
+			Color.MAGENTA.darker(), Color.MAGENTA.brighter(),
+			Color.CYAN.darker(), Color.CYAN.brighter() };
 
 	// Relations
 	private CVChartController container;
