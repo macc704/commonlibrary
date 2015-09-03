@@ -2,11 +2,18 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="CTimeLineViewSrc"/>
+	<classpathentry kind="src" path="CTableSrc"/>
+	<classpathentry kind="src" path="CSwingAppSrc"/>
+	<classpathentry kind="src" path="CChartSrc"/>
+	<classpathentry kind="src" path="CEncodingDetectorChardetSrc"/>
+	<classpathentry kind="src" path="CEncodingDetectorSrc"/>
 	<classpathentry kind="src" path="CSwingSrc"/>
 	<classpathentry kind="src" path="CommonLibrarySrc"/>
-	<classpathentry kind="lib" path="/CommonLibrary/lib/commons-csv-20070730.jar"/>
-	<classpathentry kind="lib" path="/CommonLibrary/lib/CEncodingDetector.jar"/>
+	<classpathentry kind="src" path="CPreferenceFW"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/CommonLibrary/lib/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="lib/CEncodingDetector.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="lib/commons-csv-20070730.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

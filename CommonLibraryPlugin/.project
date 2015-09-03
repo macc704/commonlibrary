@@ -34,6 +34,36 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>CChartSrc</name>
+			<type>2</type>
+			<locationURI>GIT_PARENT/CChart/src</locationURI>
+		</link>
+		<link>
+			<name>CEncodingDetectorChardetSrc</name>
+			<type>2</type>
+			<locationURI>GIT_PARENT/CEncodingDetector/chardetsrc</locationURI>
+		</link>
+		<link>
+			<name>CEncodingDetectorSrc</name>
+			<type>2</type>
+			<locationURI>GIT_PARENT/CEncodingDetector/src</locationURI>
+		</link>
+		<link>
+			<name>CSwingAppSrc</name>
+			<type>2</type>
+			<locationURI>GIT_PARENT/CSwingApp/src</locationURI>
+		</link>
+		<link>
+			<name>CTableSrc</name>
+			<type>2</type>
+			<locationURI>GIT_PARENT/CTable/src</locationURI>
+		</link>
+		<link>
+			<name>CTimeLineViewSrc</name>
+			<type>2</type>
+			<locationURI>GIT_PARENT/CTimeLineView/src</locationURI>
+		</link>
+		<link>
 			<name>CommonLibrarySrc</name>
 			<type>2</type>
 			<locationURI>GIT_PARENT/CommonLibrary/src</locationURI>
