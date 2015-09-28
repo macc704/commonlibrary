@@ -1,9 +1,36 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>info.matsuzawalab</groupId>
-  <artifactId>CommonLibrary</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <build>
-    <sourceDirectory>src</sourceDirectory>
-  </build>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>info.matsuzawalab</groupId>
+	<artifactId>CommonLibrary</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<repositories>
+		<repository>
+			<id>cripsrepository</id>
+			<name>commonlib</name>
+			<url>http://ohata1016.github.io/CRiPSLibraryRepository/</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>commonlib</groupId>
+			<artifactId>cencodingdetector</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commonlib</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commonlib</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9.0</version>
+		</dependency>
+	</dependencies>
 </project>
