@@ -109,6 +109,7 @@ public abstract class CJavaCompiler implements ICCompiler {
 
 	protected List<String> getParameters() {
 		List<String> params = new ArrayList<String>();
+		params.add("-nowarn");
 		params.add("-d");
 		params.add(destDir.getAbsolutePath().toString());
 		params.add("-cp");
