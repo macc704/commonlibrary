@@ -169,9 +169,6 @@ public class CCommandExecuter extends CAbstractModelObject {
 
 	private void executeInternal(List<String> commands) throws Exception {
 		String[] commandArray = listToStringArray(commands);
-		if (verbose) {
-			System.out.println(CArrays.toString(commandArray));
-		}
 		Runtime rt = Runtime.getRuntime();
 		Process p = rt.exec(commandArray, null, dir.toJavaFile());
 		processes.add(p);
