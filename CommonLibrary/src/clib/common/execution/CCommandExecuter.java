@@ -12,7 +12,6 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
-import clib.common.collections.CArrays;
 import clib.common.filesystem.CDirectory;
 import clib.common.filesystem.CFileSystem;
 import clib.common.model.CAbstractModelObject;
@@ -51,6 +50,7 @@ public class CCommandExecuter extends CAbstractModelObject {
 	private PrintStream out = System.out;
 	private PrintStream err = System.err;
 	private ICConsoleInputable input = new CNullConsoleInput();
+	@SuppressWarnings("unused")
 	private boolean verbose = false;
 	private CEncoding enc = CEncoding.getSystemEncoding();
 
